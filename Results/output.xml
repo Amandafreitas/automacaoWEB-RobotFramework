@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230513 20:43:23.838" rpa="false" schemaversion="3">
+<suite id="s1" name="Login" source="C:\Users\amand\OneDrive\Documentos\Projetos\Robot\AutomacaoWeb_RobotFramework\suites\login.robot">
+<test id="s1-t1" name="CT01: Login com sucesso utilizando Email no username" line="8">
+<kw name="Dado que estou na pagina de login" library="login_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230513 20:43:24.227" level="INFO">Opening browser 'chrome' to base url 'https://app.toroinvestimentos.com.br/entrar'.</msg>
+<status status="PASS" starttime="20230513 20:43:24.226" endtime="20230513 20:43:30.677"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:24.225" endtime="20230513 20:43:30.678"/>
+</kw>
+<kw name="Quando eu insiro o Email e senha do usuário válida" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:43:30.687" endtime="20230513 20:43:30.762"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>${login.username_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:43:30.763" level="INFO">Typing text 'amandkelvi@gmail.com' into text field '//input[@id="username"]'.</msg>
+<status status="PASS" starttime="20230513 20:43:30.762" endtime="20230513 20:43:30.957"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:43:30.958" endtime="20230513 20:43:30.994"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>${login.password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:43:30.996" level="INFO">Typing text '2n4eoi-E' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20230513 20:43:30.995" endtime="20230513 20:43:31.346"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:30.680" endtime="20230513 20:43:31.346"/>
+</kw>
+<kw name="E clico em entrar" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.Button_Entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230513 20:43:31.352" level="INFO">Clicking element '//button[contains(text(),"Entrar")]'.</msg>
+<status status="PASS" starttime="20230513 20:43:31.350" endtime="20230513 20:43:31.631"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:31.347" endtime="20230513 20:43:31.631"/>
+</kw>
+<kw name="Então o login é realizado e eu devo ser redirecionado para a pagina de autenticacao" library="auth_cellphone_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${auth.Button_Token_Prova}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:43:31.641" endtime="20230513 20:43:34.000"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${auth.Button_Token_Prova}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230513 20:43:34.032" level="INFO">Element '//button[contains(text(),"Acessar Token Toro pelo app")]' is displayed.</msg>
+<status status="PASS" starttime="20230513 20:43:34.001" endtime="20230513 20:43:34.032"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:31.640" endtime="20230513 20:43:34.032"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230513 20:43:34.038" endtime="20230513 20:43:36.628"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:34.033" endtime="20230513 20:43:36.628"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:24.225" endtime="20230513 20:43:36.628"/>
+</test>
+<test id="s1-t2" name="CT01: Login com sucesso informando CPF no username" line="14">
+<kw name="Dado que estou na pagina de login" library="login_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230513 20:43:36.633" level="INFO">Opening browser 'chrome' to base url 'https://app.toroinvestimentos.com.br/entrar'.</msg>
+<status status="PASS" starttime="20230513 20:43:36.632" endtime="20230513 20:43:42.090"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:36.631" endtime="20230513 20:43:42.090"/>
+</kw>
+<kw name="Quando eu insiro o CPF e senha do usuário válida" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:43:42.092" endtime="20230513 20:43:42.169"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>${login.username_cpf}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:43:42.170" level="INFO">Typing text '02856570380' into text field '//input[@id="username"]'.</msg>
+<status status="PASS" starttime="20230513 20:43:42.169" endtime="20230513 20:43:42.325"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:43:42.325" endtime="20230513 20:43:42.365"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>${login.password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:43:42.367" level="INFO">Typing text '2n4eoi-E' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20230513 20:43:42.365" endtime="20230513 20:43:42.535"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:42.091" endtime="20230513 20:43:42.535"/>
+</kw>
+<kw name="E clico em entrar" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.Button_Entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230513 20:43:42.538" level="INFO">Clicking element '//button[contains(text(),"Entrar")]'.</msg>
+<status status="PASS" starttime="20230513 20:43:42.535" endtime="20230513 20:43:42.627"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:42.535" endtime="20230513 20:43:42.627"/>
+</kw>
+<kw name="Então o login é realizado e eu devo ser redirecionado para a pagina de autenticacao" library="auth_cellphone_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${auth.Button_Token_Prova}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:43:42.627" endtime="20230513 20:43:44.887"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${auth.Button_Token_Prova}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230513 20:43:44.928" level="INFO">Element '//button[contains(text(),"Acessar Token Toro pelo app")]' is displayed.</msg>
+<status status="PASS" starttime="20230513 20:43:44.887" endtime="20230513 20:43:44.928"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:42.627" endtime="20230513 20:43:44.928"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230513 20:43:44.931" endtime="20230513 20:43:47.450"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:44.930" endtime="20230513 20:43:47.451"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:36.631" endtime="20230513 20:43:47.451"/>
+</test>
+<test id="s1-t3" name="CT01: Login com usuário e senha válido utilizando a tecla TAB" line="20">
+<kw name="Dado que estou na pagina de login" library="login_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230513 20:43:47.455" level="INFO">Opening browser 'chrome' to base url 'https://app.toroinvestimentos.com.br/entrar'.</msg>
+<status status="PASS" starttime="20230513 20:43:47.454" endtime="20230513 20:43:53.340"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:47.453" endtime="20230513 20:43:53.341"/>
+</kw>
+<kw name="Quando eu insiro o nome e senha do usuário válida utilizando a tecla TAB" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:43:53.346" endtime="20230513 20:43:53.461"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230513 20:43:53.463" level="INFO">Sending key(s) ('TAB',) to //input[@id="username"] element.</msg>
+<msg timestamp="20230513 20:43:53.761" level="INFO">Pressing special key TAB to element.</msg>
+<msg timestamp="20230513 20:43:53.761" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20230513 20:43:53.461" endtime="20230513 20:43:53.773"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>${login.username_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:43:53.773" level="INFO">Typing text 'amandkelvi@gmail.com' into text field '//input[@id="username"]'.</msg>
+<status status="PASS" starttime="20230513 20:43:53.773" endtime="20230513 20:43:54.065"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:43:54.065" endtime="20230513 20:43:54.094"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230513 20:43:54.095" level="INFO">Sending key(s) ('TAB',) to //input[@id="password"] element.</msg>
+<msg timestamp="20230513 20:43:54.411" level="INFO">Pressing special key TAB to element.</msg>
+<msg timestamp="20230513 20:43:54.411" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20230513 20:43:54.094" endtime="20230513 20:43:54.414"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>${login.password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:43:54.414" level="INFO">Typing text '2n4eoi-E' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20230513 20:43:54.414" endtime="20230513 20:43:54.548"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:53.345" endtime="20230513 20:43:54.548"/>
+</kw>
+<kw name="E aperto enter" library="login_page">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${login.Button_Entrar}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230513 20:43:54.551" level="INFO">Sending key(s) ('ENTER',) to //button[contains(text(),"Entrar")] element.</msg>
+<msg timestamp="20230513 20:43:54.907" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230513 20:43:54.907" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230513 20:43:54.549" endtime="20230513 20:43:54.941"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:54.549" endtime="20230513 20:43:54.941"/>
+</kw>
+<kw name="Então o login é realizado e eu devo ser redirecionado para a pagina de autenticacao" library="auth_cellphone_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${auth.Button_Token_Prova}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:43:54.941" endtime="20230513 20:43:57.462"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${auth.Button_Token_Prova}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230513 20:43:57.493" level="INFO">Element '//button[contains(text(),"Acessar Token Toro pelo app")]' is displayed.</msg>
+<status status="PASS" starttime="20230513 20:43:57.462" endtime="20230513 20:43:57.493"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:54.941" endtime="20230513 20:43:57.493"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230513 20:43:57.493" endtime="20230513 20:43:59.951"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:57.493" endtime="20230513 20:43:59.951"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:47.453" endtime="20230513 20:43:59.952"/>
+</test>
+<test id="s1-t4" name="CT02: Login com usuário inválido" line="26">
+<kw name="Dado que estou na pagina de login" library="login_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230513 20:43:59.955" level="INFO">Opening browser 'chrome' to base url 'https://app.toroinvestimentos.com.br/entrar'.</msg>
+<status status="PASS" starttime="20230513 20:43:59.954" endtime="20230513 20:44:05.711"/>
+</kw>
+<status status="PASS" starttime="20230513 20:43:59.954" endtime="20230513 20:44:05.711"/>
+</kw>
+<kw name="Quando eu insiro o nome do usuário inválido e uma senha válida" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:05.716" endtime="20230513 20:44:05.789"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>${login.invalid_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:05.790" level="INFO">Typing text 'teste@gmail.com' into text field '//input[@id="username"]'.</msg>
+<status status="PASS" starttime="20230513 20:44:05.789" endtime="20230513 20:44:05.943"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:05.943" endtime="20230513 20:44:05.976"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>${login.password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:05.977" level="INFO">Typing text '2n4eoi-E' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20230513 20:44:05.976" endtime="20230513 20:44:06.113"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:05.715" endtime="20230513 20:44:06.114"/>
+</kw>
+<kw name="E clico em entrar" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.Button_Entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:06.116" level="INFO">Clicking element '//button[contains(text(),"Entrar")]'.</msg>
+<status status="PASS" starttime="20230513 20:44:06.114" endtime="20230513 20:44:06.234"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:06.114" endtime="20230513 20:44:06.234"/>
+</kw>
+<kw name="Então deve ser exibida uma mensagem de dados incorretos" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Msg_Erro_Autenticacao}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230513 20:44:11.602" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230513 20:44:11.603" level="FAIL">Element '//p[contains(text(),"Dados incorretos. Digite novamente.")]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230513 20:44:06.234" endtime="20230513 20:44:11.607"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${login.Msg_Erro_Autenticacao}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230513 20:44:11.608" endtime="20230513 20:44:11.608"/>
+</kw>
+<status status="FAIL" starttime="20230513 20:44:06.234" endtime="20230513 20:44:11.608"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230513 20:44:11.615" endtime="20230513 20:44:15.498"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:11.615" endtime="20230513 20:44:15.498"/>
+</kw>
+<status status="FAIL" starttime="20230513 20:43:59.953" endtime="20230513 20:44:15.498">Element '//p[contains(text(),"Dados incorretos. Digite novamente.")]' not visible after 5 seconds.</status>
+</test>
+<test id="s1-t5" name="CT03: Login com senha inválida" line="33">
+<kw name="Dado que estou na pagina de login" library="login_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230513 20:44:15.504" level="INFO">Opening browser 'chrome' to base url 'https://app.toroinvestimentos.com.br/entrar'.</msg>
+<status status="PASS" starttime="20230513 20:44:15.502" endtime="20230513 20:44:22.187"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:15.501" endtime="20230513 20:44:22.187"/>
+</kw>
+<kw name="Quando eu insiro o nome do usuário válido e uma senha inválida" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:22.189" endtime="20230513 20:44:22.290"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>${login.username_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:22.292" level="INFO">Typing text 'amandkelvi@gmail.com' into text field '//input[@id="username"]'.</msg>
+<status status="PASS" starttime="20230513 20:44:22.291" endtime="20230513 20:44:22.553"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:22.553" endtime="20230513 20:44:22.598"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>${login.invalid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:22.600" level="INFO">Typing text '12345678' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20230513 20:44:22.598" endtime="20230513 20:44:22.839"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:22.189" endtime="20230513 20:44:22.840"/>
+</kw>
+<kw name="E clico em entrar" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.Button_Entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:22.844" level="INFO">Clicking element '//button[contains(text(),"Entrar")]'.</msg>
+<status status="PASS" starttime="20230513 20:44:22.842" endtime="20230513 20:44:23.011"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:22.842" endtime="20230513 20:44:23.011"/>
+</kw>
+<kw name="Então deve ser exibida uma mensagem de dados incorretos" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Msg_Erro_Autenticacao}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:23.013" endtime="20230513 20:44:25.082"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${login.Msg_Erro_Autenticacao}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230513 20:44:25.149" level="INFO">Element '//p[contains(text(),"Dados incorretos. Digite novamente.")]' is displayed.</msg>
+<status status="PASS" starttime="20230513 20:44:25.082" endtime="20230513 20:44:25.149"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:23.012" endtime="20230513 20:44:25.150"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230513 20:44:25.152" endtime="20230513 20:44:27.787"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:25.151" endtime="20230513 20:44:27.787"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:15.501" endtime="20230513 20:44:27.787"/>
+</test>
+<test id="s1-t6" name="CT04: Verificar se após realizar o login, é exibido a tela secreta de autorização do token" line="40">
+<kw name="Dado que estou na pagina de login" library="login_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230513 20:44:27.793" level="INFO">Opening browser 'chrome' to base url 'https://app.toroinvestimentos.com.br/entrar'.</msg>
+<status status="PASS" starttime="20230513 20:44:27.791" endtime="20230513 20:44:34.407"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:27.791" endtime="20230513 20:44:34.407"/>
+</kw>
+<kw name="Quando eu insiro o CPF e senha do usuário válida" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:34.408" endtime="20230513 20:44:34.503"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>${login.username_cpf}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:34.505" level="INFO">Typing text '02856570380' into text field '//input[@id="username"]'.</msg>
+<status status="PASS" starttime="20230513 20:44:34.503" endtime="20230513 20:44:34.714"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:34.715" endtime="20230513 20:44:34.746"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>${login.password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:34.746" level="INFO">Typing text '2n4eoi-E' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20230513 20:44:34.746" endtime="20230513 20:44:34.909"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:34.407" endtime="20230513 20:44:34.913"/>
+</kw>
+<kw name="E clico em entrar" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.Button_Entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:34.919" level="INFO">Clicking element '//button[contains(text(),"Entrar")]'.</msg>
+<status status="PASS" starttime="20230513 20:44:34.917" endtime="20230513 20:44:35.120"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:34.914" endtime="20230513 20:44:35.120"/>
+</kw>
+<kw name="Então o login é realizado e eu devo ser redirecionado para a pagina de autenticacao" library="auth_cellphone_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${auth.Button_Token_Prova}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:35.121" endtime="20230513 20:44:37.536"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${auth.Button_Token_Prova}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230513 20:44:37.569" level="INFO">Element '//button[contains(text(),"Acessar Token Toro pelo app")]' is displayed.</msg>
+<status status="PASS" starttime="20230513 20:44:37.537" endtime="20230513 20:44:37.569"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:35.121" endtime="20230513 20:44:37.569"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230513 20:44:37.569" endtime="20230513 20:44:40.014"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:37.569" endtime="20230513 20:44:40.014"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:27.790" endtime="20230513 20:44:40.014"/>
+</test>
+<test id="s1-t7" name="CT05: Login sem informar o nome do usuário" line="46">
+<kw name="Dado que estou na pagina de login" library="login_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230513 20:44:40.014" level="INFO">Opening browser 'chrome' to base url 'https://app.toroinvestimentos.com.br/entrar'.</msg>
+<status status="PASS" starttime="20230513 20:44:40.014" endtime="20230513 20:44:45.552"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:40.014" endtime="20230513 20:44:45.552"/>
+</kw>
+<kw name="Quando eu insiro uma senha válida" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:45.553" endtime="20230513 20:44:45.637"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Password}</arg>
+<arg>${login.invalid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:45.638" level="INFO">Typing text '12345678' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20230513 20:44:45.637" endtime="20230513 20:44:45.815"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:45.553" endtime="20230513 20:44:45.816"/>
+</kw>
+<kw name="E clico em entrar" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.Button_Entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:45.818" level="INFO">Clicking element '//button[contains(text(),"Entrar")]'.</msg>
+<status status="PASS" starttime="20230513 20:44:45.817" endtime="20230513 20:44:45.960"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:45.817" endtime="20230513 20:44:45.960"/>
+</kw>
+<kw name="Então deve ser exibida uma mensagem de E-mail inválido" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Msg_Email_Invalido}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:45.962" endtime="20230513 20:44:46.474"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${login.Msg_Email_Invalido}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230513 20:44:46.499" level="INFO">Element '//span[contains(text()," E-mail inválido")]' is displayed.</msg>
+<status status="PASS" starttime="20230513 20:44:46.474" endtime="20230513 20:44:46.499"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:45.961" endtime="20230513 20:44:46.499"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230513 20:44:46.500" endtime="20230513 20:44:49.008"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:46.500" endtime="20230513 20:44:49.008"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:40.014" endtime="20230513 20:44:49.008"/>
+</test>
+<test id="s1-t8" name="CT06: Login sem informar a senha" line="53">
+<kw name="Dado que estou na pagina de login" library="login_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230513 20:44:49.013" level="INFO">Opening browser 'chrome' to base url 'https://app.toroinvestimentos.com.br/entrar'.</msg>
+<status status="PASS" starttime="20230513 20:44:49.012" endtime="20230513 20:44:54.498"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:49.011" endtime="20230513 20:44:54.500"/>
+</kw>
+<kw name="Quando eu insiro um login válido" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:54.501" endtime="20230513 20:44:54.593"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Username}</arg>
+<arg>${login.username_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:54.594" level="INFO">Typing text 'amandkelvi@gmail.com' into text field '//input[@id="username"]'.</msg>
+<status status="PASS" starttime="20230513 20:44:54.593" endtime="20230513 20:44:54.762"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:54.501" endtime="20230513 20:44:54.762"/>
+</kw>
+<kw name="E clico em entrar" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.Button_Entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230513 20:44:54.766" level="INFO">Clicking element '//button[contains(text(),"Entrar")]'.</msg>
+<status status="PASS" starttime="20230513 20:44:54.764" endtime="20230513 20:44:54.870"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:54.763" endtime="20230513 20:44:54.870"/>
+</kw>
+<kw name="Então deve ser exibida uma mensagem de Senha inválida" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.Msg_Senha_Invalida}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230513 20:44:54.872" endtime="20230513 20:44:55.402"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${login.Msg_Senha_Invalida}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230513 20:44:55.428" level="INFO">Element '//span[contains(text()," Senha inválida")]' is displayed.</msg>
+<status status="PASS" starttime="20230513 20:44:55.402" endtime="20230513 20:44:55.428"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:54.871" endtime="20230513 20:44:55.429"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230513 20:44:55.432" endtime="20230513 20:44:57.931"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:55.431" endtime="20230513 20:44:57.931"/>
+</kw>
+<status status="PASS" starttime="20230513 20:44:49.011" endtime="20230513 20:44:57.931"/>
+</test>
+<status status="FAIL" starttime="20230513 20:43:23.854" endtime="20230513 20:44:57.931"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="1" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

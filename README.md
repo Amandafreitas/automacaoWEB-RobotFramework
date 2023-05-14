@@ -1,89 +1,108 @@
 ### Projeto de Automação de Testes Toro v1.1
 
-####Funcionalidade: Login
+Funcionalidade: Login
 Como um usuário,
 Eu quero fazer login no site,
 Para acessar a pagina secreta.
 
-##### Suite de testes da funcionalidade Login
+### Suite de testes da funcionalidade Login
+
+Limitações:
+- Parar no primeiro passo do cadastro para evitar uso de SMS no Login ou autenticação dupla.
+Dessa forma, após realizar o login, só temos acesso a página de autenticação (TOKEN).
+
+
 |Nº|Cenário|Prioridade|
 |:----|:----|:----|
-|1|Login com sucesso|Alta|
-|2|Login com nome de usuário inválido|Alta|
-|3|Login com senha inválida|Alta|
-|4|Verificar se após realizar o login, é exibido a tela secreta de autorização do token|Alta|
-|5|Login sem informar o nome do usuário|Média|
-|6|Login sem informar a senha|Média|
-|7|Login com usuário bloqueado|Média|
-|8|Login com usuário válido e senha expirada|Média|
-|9|Verificar se após fechar p menu lateral de autorização do token, é exibido a tela de login|Média|
-|10|Login com tentativas incorretas|Baixa|
-|11|Tentar acessar a página secreta sem estar logado|Baixa|
-|12|Bloqueio de conta após várias tentativas inválidas|Baixa|
+|1|Login com sucesso clicando no botão entrar|Alta|
+|2|Login com sucesso utilizando a tecla TAB|Baixa|
+|3|Login com sucesso após inserir credenciais válidas e pressionar enter|Baixa|
+|4|Login com nome de usuário inválido|Alta|
+|5|Login com senha inválida|Alta|
+|6|Verificar se após realizar o login, é exibido a tela secreta de autorização do token|Alta|
+|7|Verificar se o login é afetado com um ataque de SQL Injection|Alta|
+|8|Login sem informar o nome do usuário|Média|
+|9|Login sem informar a senha|Média|
+|10|Login com usuário bloqueado|Média|
+|11|Login com usuário válido e senha expirada|Média|
+|12|Verificar se após fechar o menu lateral de autorização do token, é exibido a tela de login|Média|
+|13|Tentar acessar a página secreta sem estar logado|Alta|
+|14|Bloqueio de conta após 5 tentativas com credenciais inválidas|Alta|
+|15|Verificar que o campo password deve aparecer de forma encriptada|Média|
+|16|Verificar que não é possível copiar o campo password após adicionado|Média|
+|17|Verificar que o usuário não deve permanecer logado após fechar a janela e abrir novamente|Média|
+|18|Login informando um nome de usuário muito grande |Baixa|
+|19|Login informando um nome de senha muito grande |Baixa|
 
 
+### Cenários:
 
-##### Cenários
+Cenário 1: Login com sucesso clicando no botão entrar
+Dado que o usuário está na página de login
+Quando é inserido uma credencial válida
+Então o usuário é redirecionado para a página secreta do token.
 
-###### Cenário: Login com sucesso
-Dado que estou na página de login
-Quando insiro minhas credenciais válidas
-Então sou redirecionado para a página secreta do token.
+Cenário 2: 
+Dado que o usuário está na página de login
+Quando é inserido o nome e senha do usuário válida utilizando a tecla TAB
+E aperto enter
+Então eu devo ser redirecionado para a pagina de autenticacao
 
-###### Cenário: Login com nome de usuário inválido
-Dado que estou na página de login
-Quando insiro um nome de usuário inválido
-Então vejo uma mensagem de erro informando "Dados incorretos. Digite novamente."
+Cenário 3:
 
-###### Cenário: Login com senha inválida
-Dado que estou na página de login
-Quando insiro uma senha inválida
-Então vejo uma mensagem de erro informando "Dados incorretos. Digite novamente."
+Cenário 4: Login com nome de usuário inválido
+Dado que o usuário está na página de login
+Quando o usuário insere um nome de usuário inválido
+Então é exibida uma mensagem de erro informando "Dados incorretos. Digite novamente."
 
-###### Cenário: Verificar se após fechar o menu lateral de autorização do token, é exibido a tela de login
-Dado que estou na página restrita de autorização do token
-Quando fecho o menu lateral
-Então sou redirecionado para a página de login
+Cenário 5: Login com senha inválida
+Dado que o usuário está na página de login
+Quando o usuário insere uma senha inválida
+Então é exibida uma mensagem de erro informando "Dados incorretos. Digite novamente."
 
-###### Cenário: Login sem informar o nome do usuário
-Dado que estou na página de login
-Quando deixo o campo de usuário em branco e insiro uma senha válida
-Então vejo uma mensagem de erro informando "E-mail inválido"
+Cenário 6: Verificar se após realizar o login, é exibido a tela secreta de autorização do token
+Dado que o usuário está na página de login
+Quando o usuário insere credenciais válidas
+Então o usuário é redirecionado para a página de autorização do token
 
-###### Cenário: Login sem informar a senha
-Dado que estou na página de login
-Quando insiro um nome de usuário válido e deixo o campo de senha em branco
-Então vejo uma mensagem de erro informando "Senha inválida"
+Cenário 7: 
 
-###### Cenário: Login com usuário bloqueado
-Dado que estou na página de login
-Quando insiro as credenciais de um usuário bloqueado
-Então vejo uma mensagem informando que o usuário está bloqueado
+Cenário 8: Login sem informar o nome do usuário
+Dado que o usuário está na página de login
+Quando o usuário não preenche o campo de usuário e insire uma senha válida
+Então é exibida uma mensagem de erro informando "E-mail inválido"
 
-###### Cenário: Login com usuário válido e senha expirada
-Dado que estou na página de login
-Quando insiro as credenciais de um usuário com senha expirada
-Então sou redirecionado para a página de troca de senha
+Cenário 9: Login sem informar a senha
+Dado que o usuário está na página de login
+Quando o usuário insere um nome de usuário válido e não preenche o campo senha
+Então é exibida uma mensagem de erro informando "Senha inválida"
 
-###### Cenário: Verificar se após realizar o login, é exibido a tela secreta de autorização do token
-Dado que estou na página de login
-Quando insiro minhas credenciais válidas
-Então sou redirecionado para a página de autorização do token
+Cenário 10: Login com usuário bloqueado
+Dado que o usuário está na página de login
+Quando o usuário está bloqueado 
+E o usuário insere as credenciais válidas
+Então é exibida uma mensagem informando que o usuário está bloqueado
 
-###### Cenário: Login com tentativas incorretas
-Dado que estou na página de login
-Quando insiro credenciais inválidas várias vezes
-Então sou bloqueado temporariamente para tentar novamente
+Cenário 11: Login com usuário válido e senha expirada
+Dado que o usuário está na página de login
+Quando o usuário está com a senha expirada
+E o usuário insere as credenciais válidas
+Então sou redirecionado para a página de trocar de senha
 
-###### Cenário: Tentar acessar a página secreta sem estar logado
-Dado que não estou logado no sistema
-Quando tento acessar a página restrita
-Então sou redirecionado para a página de login
+Cenário 12: Verificar se após fechar o menu lateral de autorização do token, é exibido a tela de login
+Dado que o usuário está na página restrita de autorização do token
+Quando o menu lateral é fechado
+Então o usuário deve ser redirecionado para a página de login
 
-###### Cenário: Bloqueio de conta após várias tentativas inválidas
-Dado que estou na página de login
-Quando eu tento fazer o login utilizando várias credenciais inválidas
-Então minha conta é bloqueada temporariamente
+Cenário 13: Tentar acessar a página secreta sem estar logado
+Dado que o usuário não esta logado no sistema
+Quando o usuário tentar acessar a página restrita
+Então o usuário é redirecionado para a página de login
+
+Cenário 14: Bloqueio de conta após 5 tentativas com credenciais inválidas
+Dado que o usuário tentar realizar o login 5 vezes com credenciais inválidasQuando o usuário tentar realizar o login 5 vezes com credenciais inválidas
+Então a conta é bloqueada temporariamente
+
 
 ##### Sugestão de melhorias
 

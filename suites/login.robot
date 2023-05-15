@@ -27,8 +27,7 @@ CT02: Login com usuário inválido
     Dado que estou na pagina de login
     Quando eu insiro o nome do usuário inválido e uma senha válida
     E clico em entrar
-    #Então deve ser exibida uma mensagem de dados incorretos
-    Então deve ser exibida uma mensagem de bloqueio
+    Então deve ser exibida uma mensagem de dados incorretos
 
 CT03: Login com senha inválida
     Dado que estou na pagina de login

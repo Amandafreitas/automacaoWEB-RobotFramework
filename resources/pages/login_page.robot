@@ -7,13 +7,12 @@ Resource    ../main.robot
 &{login}
 
 # Dados válidos para login
-# Dados inválidos para o login
 ...    username_email=***
 ...    username_cpf=**
 ...    password=***
 
 # Dados inválidos para o login
-...    invalid_username=teste@gmail.com
+...    invalid_username==}Zv9aqn#8X2@gmail.com
 ...    invalid_password=12345678
 
 # Elementos da pagina de login
